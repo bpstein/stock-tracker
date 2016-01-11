@@ -64,10 +64,29 @@ angular.module('stock-tracker.controllers', [])
 
     $scope.ticker = $stateParams.stockTicker;
 
-    var promise = stockDataService.getPriceData($scope.ticker);
+    $scope.$on("$ionicView.afterEnter", function() {
+      getPriceData();
+      getDetailsData();
+    });
 
-    promise.then(function(data) {
+    function getPriceData() {
+
+      var promise = stockDataService.getPriceData($scope.ticker);
+
+      promise.then(function(data) {
       console.log(data);
     });
+
+    }
+
+    function getDetailsData() {
+
+      var promise = stockDataService.getDetailsData($scope.ticker);
+
+      promise.then(function(data) {
+      console.log(data);
+    });
+
+    }
 
 }]);
