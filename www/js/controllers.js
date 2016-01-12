@@ -75,6 +75,7 @@ angular.module('stock-tracker.controllers', [])
 
       promise.then(function(data) {
       console.log(data);
+      $scope.stockPriceData = data;
     });
 
     }
@@ -85,6 +86,7 @@ angular.module('stock-tracker.controllers', [])
 
       promise.then(function(data) {
       console.log(data);
+      $scope.stockDetailsData = data;
     });
 
     }
