@@ -1,6 +1,8 @@
 
 angular.module('stock-tracker', [
   'ionic', 
+  'nvd3',
+  'nvChart',
   'stock-tracker.controllers',
   'stock-tracker.services',
   'stock-tracker.filters',
